@@ -1,0 +1,28 @@
+.selection__box {
+  padding: 60px 80px;
+  height: 505px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  border-radius: 20px;
+  transition: all 0.2s;
+  fill: white;
+}
+
+.selection__box:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px,
+    rgba(255, 255, 255, 0.3) 0px 3px 7px -10px;
+}
+
+.selection__images {
+  width: 180px;
+  height: auto;
+  transition: all 0.1s;
+}
+
+.selection__box:hover > .selection__images {
+  transform: scale(1.1);
+}
