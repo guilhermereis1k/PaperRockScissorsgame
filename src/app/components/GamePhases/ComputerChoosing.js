@@ -1,5 +1,6 @@
 import styles from "./ComputerChoosing.module.css";
 import { useEffect } from "react";
+import React from "react";
 
 const ComputerChoosing = (props) => {
   const generateRandomComputerWeapon = (min, max) => {

@@ -77,25 +77,20 @@ const Battle = (props) => {
   let gameResultPlayer;
   let gameResultComputer;
 
-  useEffect(() => {
-    if (hasBattled === true && playerWon === true) {
-      gameResultPlayer = "win";
-      props.setPlayerScore(props.playerScore + 1);
-    }
+  if (hasBattled === true && playerWon === true) {
+    gameResultPlayer = "win";
+    gameResultComputer = "lose";
+    props.setPlayerScore(props.playerScore + 1);
+    console.log(gameResultPlayer);
+    console.log(gameResultComputer);
+  }
 
-    if (hasBattled === true && playerWon === false) {
-      gameResultPlayer = "lose";
-    }
-
-    if (hasBattled === true && computerWon === true) {
-      gameResultComputer = "win";
-      props.setPlayerScore(0);
-    }
-
-    if (hasBattled === true && computerWon === false) {
-      gameResultComputer = "lose";
-    }
-  }, [hasBattled]);
+  if (hasBattled === true && playerWon === false) {
+    gameResultPlayer = "lose";
+    gameResultComputer = "win";
+    console.log(gameResultPlayer);
+    console.log(gameResultComputer);
+  }
 
   return (
     <main className={styles.battle}>

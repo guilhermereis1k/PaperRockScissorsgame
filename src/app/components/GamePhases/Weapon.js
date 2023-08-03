@@ -4,6 +4,7 @@ import SvgRock from "../../img/Rock.js";
 import SvgPaper from "../../img/Paper.js";
 
 const Weapon = ({ text, choosingWeapon, fill }) => {
+  console.log(fill);
   let playerSelectedWeapon = text;
 
   let selectedImage;
