@@ -16,7 +16,6 @@ const Battle = (props) => {
     if (props.playerWeapon === "Rock") {
       switch (props.computerWeapon) {
         case "Rock":
-          console.log("draw");
           break;
         case "Scissors":
           setHasBattled(true);
@@ -36,7 +35,6 @@ const Battle = (props) => {
     if (props.playerWeapon === "Scissors") {
       switch (props.computerWeapon) {
         case "Scissors":
-          console.log("draw");
           break;
         case "Paper":
           setHasBattled(true);
@@ -56,7 +54,6 @@ const Battle = (props) => {
     if (props.playerWeapon === "Paper") {
       switch (props.computerWeapon) {
         case "Paper":
-          console.log("draw");
           break;
         case "Rock":
           setHasBattled(true);
@@ -81,15 +78,11 @@ const Battle = (props) => {
     gameResultPlayer = "win";
     gameResultComputer = "lose";
     props.setPlayerScore(props.playerScore + 1);
-    console.log(gameResultPlayer);
-    console.log(gameResultComputer);
   }
 
   if (hasBattled === true && playerWon === false) {
     gameResultPlayer = "lose";
     gameResultComputer = "win";
-    console.log(gameResultPlayer);
-    console.log(gameResultComputer);
   }
 
   return (
