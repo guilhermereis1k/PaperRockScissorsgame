@@ -19,9 +19,15 @@ const ChooseWeapon = (props) => {
 
   return (
     <div className={styles.selection}>
-      <Weapon text={"Scissors"} choosingWeapon={chooseSelectedWeaponScissors} />
-      <Weapon text={"Rock"} choosingWeapon={chooseSelectedWeaponRock} />
-      <Weapon text={"Paper"} choosingWeapon={chooseSelectedWeaponPaper} />
+      <div onClick={chooseSelectedWeaponScissors}>
+        <Weapon text={"Scissors"} onClick={chooseSelectedWeaponScissors} />
+      </div>
+      <div onClick={chooseSelectedWeaponRock}>
+        <Weapon text={"Rock"} />
+      </div>
+      <div onClick={chooseSelectedWeaponPaper}>
+        <Weapon text={"Paper"} />
+      </div>
     </div>
   );
 };

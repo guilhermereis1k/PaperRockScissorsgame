@@ -1,26 +1,54 @@
 .selection__box {
-  padding: 60px 80px;
-  height: 505px;
+  padding: 8rem 8rem;
+  min-height: 63rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-  border-radius: 20px;
+  justify-content: flex-end;
+  gap: 8rem;
+  border-radius: 2rem;
   transition: all 0.2s;
   fill: white;
+  font-size: 2.4rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .selection__box {
+    min-height: 50rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .selection__box {
+    min-height: 10rem;
+    padding: 5rem 5rem;
+    gap: 4rem;
+  }
 }
 
 .selection__box:hover {
-  transform: translateY(-10px);
-  box-shadow: rgba(255, 255, 255, 0.25) 0px 6px 12px -2px,
-    rgba(255, 255, 255, 0.3) 0px 3px 7px -10px;
+  transform: translateY(-1rem);
+  box-shadow: rgba(255, 255, 255, 0.25) 0rem 0.6rem 1.2rem -2rem,
+    rgba(255, 255, 255, 0.3) 0rem 3px 7rem -1rem;
+  font-size: 2.6rem;
 }
 
 .selection__images {
-  width: 180px;
+  width: 20rem;
   height: auto;
   transition: all 0.1s;
+}
+
+@media only screen and (max-width: 900px) {
+  .selection__images {
+    width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .selection__images {
+    width: 15rem;
+  }
 }
 
 .selection__box:hover > .selection__images {

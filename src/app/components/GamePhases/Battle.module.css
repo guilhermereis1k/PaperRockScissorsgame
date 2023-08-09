@@ -2,41 +2,71 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .battle h1 {
   animation: showIn 2s linear 0s;
   position: absolute;
   position: absolute;
+  font-size: 3rem;
   top: 3%;
   left: 50%;
   transform: translate(-50%, 0%);
 }
 
 .battle__content {
-  margin-top: 40px;
+  margin-top: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   width: 100%;
   height: 100%;
+  gap: 2rem;
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .battle__content {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .battle__content > h3 {
-  transform: translateY(80px);
+  transform: translateY(8rem);
+}
+
+@media only screen and (max-width: 700px) {
+  .battle__content h3 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .battle__box {
-  padding: auto;
-  min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 100px;
-  border-radius: 20px;
+  gap: 4rem;
+  border-radius: 2rem;
   transition: all 0.2s;
+}
+
+@media only screen and (max-width: 700px) {
+  .battle__box {
+    gap: 0;
+  }
+
+  .battle__box:first-child {
+    margin-top: 10rem;
+  }
+}
+
+.battle__box:hover {
+  transform: none;
 }
 
 .battle__player {
@@ -47,34 +77,63 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
-  gap: 30px;
+  margin-top: 10rem;
+  gap: 3rem;
   animation: showInDisplay linear 3s;
 }
 
+@media only screen and (max-width: 700px) {
+  .battle__result {
+    flex-direction: column;
+    margin: 2rem 0;
+    margin-bottom: 6rem;
+    gap: 1rem;
+    height: auto;
+    animation: showInDisplayMobile linear 3s;
+  }
+}
+
 .battle__result h2 {
-  font-size: 40px;
+  font-size: 4rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .battle__result h2 {
+    font-size: 3rem;
+  }
 }
 
 .battle__result p {
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: 700;
 }
 
+@media only screen and (max-width: 700px) {
+  .battle__result p {
+    font-size: 2rem;
+  }
+}
+
 .battle__result button {
-  margin-top: 50px;
+  margin-top: 5rem;
   background-color: #fff;
   color: #000;
-  padding: 10px;
-  width: 300px;
+  padding: 1rem;
+  width: 30rem;
   font-weight: 700;
   border: none;
   font-family: inherit;
-  font-size: 18px;
+  font-size: 2.4rem;
   cursor: pointer;
   display: block;
   transition: all 0.4s;
   border: 2px solid transparent;
+}
+
+@media only screen and (max-width: 700px) {
+  .battle__result button {
+    margin-top: 2rem;
+  }
 }
 
 .battle__result button:hover {
@@ -84,12 +143,18 @@
 }
 
 .battle__score {
-  margin-top: 60px;
+  margin-top: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .battle__score {
+    margin-top: 2rem;
+  }
 }
 
 @keyframes showIn {
@@ -113,6 +178,24 @@
   100% {
     opacity: 100%;
     visibility: visible;
+  }
+}
+
+@keyframes showInDisplayMobile {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    height: 0%;
+  }
+  80% {
+    opacity: 0%;
+    visibility: visible;
+    height: 0%;
+  }
+  100% {
+    opacity: 100%;
+    visibility: visible;
+    height: inherit;
   }
 }
 

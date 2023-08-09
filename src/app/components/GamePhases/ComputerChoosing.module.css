@@ -2,13 +2,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
   animation: 1s ease-out 4s 1 opacityShowing;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .main {
+    text-align: center;
+  }
 }
 
 .loading:after {
   content: " .";
   animation: dots 1s steps(5, end) infinite;
+}
+
+@media only screen and (max-width: 700px) {
+  .loading:after {
+    content: " .";
+    text-align: center;
+  }
 }
 
 @keyframes dots {

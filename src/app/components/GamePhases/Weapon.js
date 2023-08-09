@@ -3,7 +3,7 @@ import SvgScissors from "../../img/Scissors.js";
 import SvgRock from "../../img/Rock.js";
 import SvgPaper from "../../img/Paper.js";
 
-const Weapon = ({ text, choosingWeapon, fill }) => {
+const Weapon = ({ text, fill }) => {
   let playerSelectedWeapon = text;
 
   let selectedImage;
@@ -12,7 +12,6 @@ const Weapon = ({ text, choosingWeapon, fill }) => {
     case "Scissors":
       selectedImage = (
         <SvgScissors
-          onClick={choosingWeapon}
           className={styles["selection__images"]}
           alt={`Choose ${text.toLowerCase()} as your weapon"`}
         />
@@ -21,7 +20,6 @@ const Weapon = ({ text, choosingWeapon, fill }) => {
     case "Rock":
       selectedImage = (
         <SvgRock
-          onClick={choosingWeapon}
           className={styles["selection__images"]}
           alt={`Choose ${text.toLowerCase()} as your weapon"`}
         />
@@ -30,7 +28,6 @@ const Weapon = ({ text, choosingWeapon, fill }) => {
     case "Paper":
       selectedImage = (
         <SvgPaper
-          onClick={choosingWeapon}
           className={styles["selection__images"]}
           alt={`Choose ${text.toLowerCase()} as your weapon"`}
         />
@@ -40,8 +37,8 @@ const Weapon = ({ text, choosingWeapon, fill }) => {
 
   return (
     <div className={`${styles.selection__box} ${fill}`}>
-      <h2>{text}</h2>
       {selectedImage}
+      <h2>{text}</h2>
     </div>
   );
 };
