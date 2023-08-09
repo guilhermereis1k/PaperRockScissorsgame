@@ -15,6 +15,12 @@
   transform: translate(-50%, 0%);
 }
 
+@media only screen and (max-width: 700px) {
+  .battle h1 {
+    display: none;
+  }
+}
+
 .battle__content {
   margin-top: 4rem;
   display: flex;
@@ -31,6 +37,7 @@
   .battle__content {
     flex-direction: column;
     justify-content: center;
+    margin-top: 0;
   }
 }
 
