@@ -1,89 +1,25 @@
+import { useEffect } from "react";
 import styles from "./Battle.module.css";
 import Weapon from "./Weapon";
-import { useEffect, useState } from "react";
+import useBattle from "../../hooks/use-battle";
 
 const Battle = (props) => {
-  const [playerWon, setPlayerWon] = useState(false);
-  const [computerWon, setComputerWon] = useState(false);
-  const [hasBattled, setHasBattled] = useState(false);
-  const [matchResult, setMatchResult] = useState("Draw");
-
   const changePhase = () => {
     props.identifyPhase(1);
   };
 
+  const { matchResultText, defineWinner: calculateResult } = useBattle(
+    props.playerScore,
+    props.setPlayerScore
+  );
+
   useEffect(() => {
-    if (props.playerWeapon === "Rock") {
-      switch (props.computerWeapon) {
-        case "Rock":
-          break;
-        case "Scissors":
-          setHasBattled(true);
-          setPlayerWon(true);
-          setComputerWon(false);
-          setMatchResult("Player 1 wins");
-          break;
-        case "Paper":
-          setHasBattled(true);
-          setPlayerWon(false);
-          setComputerWon(true);
-          setMatchResult("Computer wins");
-          break;
-      }
-    }
+    calculateResult(props.playerWeapon, props.computerWeapon, getResults);
+  }, []);
 
-    if (props.playerWeapon === "Scissors") {
-      switch (props.computerWeapon) {
-        case "Scissors":
-          break;
-        case "Paper":
-          setHasBattled(true);
-          setPlayerWon(true);
-          setComputerWon(false);
-          setMatchResult("Player 1 wins");
-          break;
-        case "Rock":
-          setHasBattled(true);
-          setPlayerWon(false);
-          setComputerWon(true);
-          setMatchResult("Computer wins");
-          break;
-      }
-    }
-
-    if (props.playerWeapon === "Paper") {
-      switch (props.computerWeapon) {
-        case "Paper":
-          break;
-        case "Rock":
-          setHasBattled(true);
-          setPlayerWon(true);
-          setComputerWon(false);
-          setMatchResult("Player 1 wins");
-          break;
-        case "Scissors":
-          setHasBattled(true);
-          setPlayerWon(false);
-          setComputerWon(true);
-          setMatchResult("Computer wins");
-          break;
-      }
-    }
-  }, [hasBattled]);
-
-  let gameResultPlayer;
-  let gameResultComputer;
-
-  if (hasBattled === true && playerWon === true) {
-    gameResultPlayer = "win";
-    gameResultComputer = "lose";
-    props.setPlayerScore(props.playerScore + 1);
-  }
-
-  if (hasBattled === true && playerWon === false) {
-    gameResultPlayer = "lose";
-    gameResultComputer = "win";
-  }
+  const getResults = (data) => {
+    console.log(data);
+  };
 
   return (
     <main className={styles.battle}>
@@ -91,10 +27,13 @@ const Battle = (props) => {
       <div className={styles["battle__content"]}>
         <div className={styles["battle__box"]}>
           <h3 className={styles["battle__player"]}>Player 1</h3>
-          <Weapon fill={gameResultPlayer} text={props.playerWeapon} />
+          <Weapon
+            fill={matchResultText == "Player 1 wins" ? "win" : "lose"}
+            text={props.playerWeapon}
+          />
         </div>
         <div className={styles["battle__result"]}>
-          <h2>{matchResult}</h2>
+          <h2>{matchResultText}</h2>
           <div className={styles["battle__score"]}>
             <h2>Score:</h2>
             <p>{props.playerScore}</p>
@@ -103,7 +42,10 @@ const Battle = (props) => {
         </div>
         <div className={styles["battle__box"]}>
           <h3 className={styles["battle__player"]}>Computer</h3>
-          <Weapon fill={gameResultComputer} text={props.computerWeapon} />
+          <Weapon
+            fill={matchResultText == "Computer wins" ? "win" : "lose"}
+            text={props.computerWeapon}
+          />
         </div>
       </div>
     </main>
