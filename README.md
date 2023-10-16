@@ -6,21 +6,23 @@ Link: https://guilhermereis1k.github.io/PaperRockScissorsgame/
 
 Pages:
 
-START
+### START
 
 ![1](https://github.com/guilhermereis1k/PaperRockScissorsgame/assets/102367663/f0e92d10-b5e8-4b8d-9f81-639fa710d6b2)
 
 
-CHOOSING WEAPON
+
+### CHOOSING WEAPON
 
 ![2](https://github.com/guilhermereis1k/PaperRockScissorsgame/assets/102367663/73152303-dc09-4a1a-bfbd-f2a22623ad2f)
 
 
-WAIT FOR COMPUTER CHOOSING
+### WAIT FOR COMPUTER CHOOSING
 
-![3](https://github.com/guilhermereis1k/PaperRockScissorsgame/assets/102367663/2230c1fa-a582-4cad-b6b8-774da36ab9bb)
+![image](https://github.com/guilhermereis1k/PaperRockScissorsgame/assets/102367663/a47c20d9-1af4-476c-87f7-6ab284f526a1)
 
 
-BATTLE FINAL RESULT
+
+### BATTLE FINAL RESULT
 
 ![4](https://github.com/guilhermereis1k/PaperRockScissorsgame/assets/102367663/6127ebca-6c41-4904-83e0-cc0b4015bb5d)
